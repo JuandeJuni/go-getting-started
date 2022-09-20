@@ -1,60 +1,97 @@
-<html>
-  {{template "header.tmpl.html"}}
-<body>
-  {{template "nav.tmpl.html"}}
-
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/static/lang-logo.png">
-    </a>
-    <h1>Getting Started with Go on Heroku</h1>
-      <p>This is a sample Go application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-      <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-go"><span class="glyphiconglyphicon-flash"></span> Getting Started with Go</a>
-      <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/go-getting-started"><span class="glyphiconglyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-      To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-go" class="alert-link">Getting Started with Go on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-          <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/go-getting-started">Heroku Button</a> on the repository.</li>
-
-          <li>When Heroku received the source code it used the go tool chain to compile the application along with any vendored dependencies and created a deployable slug.</li>
-          <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-          <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="SUPERKICKS ATC" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="SUPERKICKS ATC"
+    />
+    <meta name="theme-color" content="#92EBF7" />
+    <title>SUPERKICKS ATC</title>
+    <script>
+      function runItUp() {
+        console.log("ok");
+      }
+    </script>
+  </head>
+  <body onload="runItUp()">
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-go">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>go get github.com/heroku/go-getting-started</code> - this will create a local copy of the source code for the app, compile and install the generated executables in <code>$GOPATH/bin</code></li>
-          <li><code>cd $GOPATH/src/github.com/heroku/go-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name&gt;</code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-go#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-go">Getting Started with Go on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/go-support">Heroku Go Support</a></li>
-      </ul>
+    <div id="main">
+      <div class="fof pinkText">
+        <h1 class="hover-grow">Adding to cart on SUPERKICKS...</h1>
+        <form id="autoSubmitForm" method="POST" action="https://superkicks.in/wp-admin/admin-ajax.php">
+          <!-- <input
+            type="hidden"
+            name="attribute_pa_shoe-size-uk"
+            id="attribute_pa_shoe-size-uk"
+            value="5"
+          /> -->
+          <input
+            type="hidden"
+            name="quantity"
+            id="quantity"
+            value="1"
+          />
+          <!-- <input
+            type="hidden"
+            name="add-to-cart"
+            id="add-to-cart"
+            value="152285"
+          /> -->
+          <!-- <input
+            type="hidden"
+            name="product_id"
+            id="product_id"
+            value="152285"
+          /> -->
+          <input
+            type="hidden"
+            name="action"
+            id="action"
+            value="shoptimizer_pdp_ajax_atc"
+          />
+          <input
+            type="hidden"
+            name="variation-id"
+            id="variation-id"
+            value="152287"
+          />
+          
+        </form>
+      </div>
     </div>
-  </div> <!-- row -->
-    <div class="alert alert-info text-center" role="alert">
-      Please do work through the Getting Started guide, even if you do know how to build such an application. The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
+  </body>
+  
+  <script>
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
 
-</body>
+      
+      function runItUp() {
+        
+        var pid=document.getElementById("variation-id");
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const pidvalue = urlParams.get('pid')
+        pid.value = pidvalue;
+        console.log(pid);
+        var form = document.getElementById("autoSubmitForm");
+        form.submit();
+        
+        sleep(300).then(() => {
+            window.location = 'https:\/\/superkicks.in\/cart\/';
+        });
+        
+      }
+      
+  </script>
+  
 </html>
